@@ -4,6 +4,7 @@ import { Form } from "./components/Form";
 import { ContactList } from "./components/ContactList";
 import { Filter } from "./components/Filter";
 import { CSSTransition } from "react-transition-group";
+import Notifications from "./components/Notifications/Notifications";
 
 class App extends Component {
   state = {
@@ -36,7 +37,7 @@ class App extends Component {
   };
 
   render() {
-    const { contacts, filter } = this.state;
+    const { contacts, filter, contactAdded, declaredName } = this.state;
     const filteredContacts = contacts.filter((contact) =>
       contact.name.includes(filter)
     );
@@ -62,6 +63,7 @@ class App extends Component {
           deleteContact={this.deleteContact}
         />
 
+        <Notifications name={declaredName} contactAdded={contactAdded} />
       </>
     );
   }

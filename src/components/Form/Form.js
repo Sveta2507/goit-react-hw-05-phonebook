@@ -8,14 +8,12 @@ class Form extends Component {
   };
 
   handleChange = (event) => {
-    // console.log("input: ", event.target.name);
-    // console.log("value: ", event.target.value);
-    // console.dir(event.target);
     const { name, value } = event.target;
     this.setState({
       [name]: value,
     });
   };
+
   handleSubmit = (event) => {
     event.preventDefault();
     const { name, number } = this.state;
@@ -32,19 +30,21 @@ class Form extends Component {
     return (
       <>
         <form onSubmit={this.handleSubmit}>
-          <label>Name</label>
+          <label>Name: </label>
           <input
             type="text"
             required
             name="name"
             onChange={this.handleChange}
+            placeholder="Enter your name please"
           />
-          <label>Number</label>
+          <label>Number: </label>
           <input
             type="text"
             required
             name="number"
             onChange={this.handleChange}
+            placeholder="Enter your phone number please"
           />
           <button type="submit">Add contact</button>
         </form>
