@@ -37,7 +37,7 @@ class App extends Component {
   };
 
   render() {
-    const { contacts, filter, contactAdded, declaredName } = this.state;
+    const { contacts, filter, contact, name, inProp } = this.state;
     const filteredContacts = contacts.filter((contact) =>
       contact.name.includes(filter)
     );
@@ -63,7 +63,9 @@ class App extends Component {
           deleteContact={this.deleteContact}
         />
 
-        <Notifications name={declaredName} contactAdded={contactAdded} />
+        <CSSTransition in={inProp} timeout={200} classNames="my-node">
+          <Notifications name={name} contactAdded={contact} />
+        </CSSTransition>
       </>
     );
   }

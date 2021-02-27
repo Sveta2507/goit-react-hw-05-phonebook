@@ -10,20 +10,20 @@
   padding: 7px;
 }
 
-.enter {
+.my-node-enter {
   opacity: 0;
   transform: translateY(-100%);
 }
-.enterActive {
+.my-node-enterActive {
   opacity: 1;
   transform: translateY(0);
   transition: all 500ms linear;
 }
-.exit {
+.my-node-exit {
   opacity: 1;
   transform: translateY(0);
 }
-.exitActive {
+.my-node-exitActive {
   opacity: 0;
   transform: translateY(-100%);
   transition: all 500ms linear;
