@@ -1,0 +1,11 @@
+.input {
+    display: block;
+}
+
+.label {
+    font-weight: bold;
+    color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+	background-image: linear-gradient(to right, rgb(251, 255, 9), rgb(6, 81, 255));
+}

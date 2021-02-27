@@ -1,0 +1,16 @@
+.form * {
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .label {
+    font-weight: bold;
+    color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+	background-image: linear-gradient(to left, rgb(38, 9, 255), rgb(19, 255, 6));
+  }
+
+  .button {
+      font-style: oblique;
+  }

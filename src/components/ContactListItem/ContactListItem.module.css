@@ -1,0 +1,15 @@
+.section {
+    display: flex;
+    background: content-box radial-gradient(crimson, skyblue);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    /* background-image: url(https://lh3.googleusercontent.com/proxy/0oZ8vMNzgBS0Fzn7jJ_9WtwNhqY1UPbZOdG73wVfexLxqJLQB-ttNomlzk2AChkniSVYSpNAcLBUHq8VNVSTnPeV1hOjb-vZkgPhw86Utu2fCEI); */
+    background-color: transparent;
+    width: auto;
+    height: fit-content;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
