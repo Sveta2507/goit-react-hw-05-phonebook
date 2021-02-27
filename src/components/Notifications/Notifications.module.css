@@ -1,34 +1,30 @@
-.container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 40px;
-    background-color: rgba(235, 90, 90, 0.801);
-    color: white;
-    font-size: 17px;
-    padding: 20px;
-    text-align: center;
-  }
-  .text {
-    line-height: 0.5;
-  }
-  .enter {
-    opacity: 0;
-    transform: translateX(100%);
-    transition: all 250ms linear;
-  }
+.notif {
+  position: absolute;
+  right: 60px;
+  top: 10px;
+  max-width: 270px;
+  background-color: rgb(115, 111, 231);
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  padding: 7px;
+}
 
-  .enterActive {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  .exit {
-    opacity: 1;
-    transform: translateX(0);
-    transition: all 250ms linear;
-  }
-  .exitActive {
-    opacity: 0;
-    transform: translateX(100%);
-  }
+.enter {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.enterActive {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 500ms linear;
+}
+.exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.exitActive {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 500ms linear;
+}

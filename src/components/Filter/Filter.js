@@ -4,7 +4,12 @@ const Filter = ({ onChange, value }) => {
   return (
     <>
       <label>Filter</label>
-      <input type="text" onChange={onChange} value={value} />
+      <input
+        type="text"
+        onChange={onChange}
+        value={value}
+        placeholder="filter contacts"
+      />
     </>
   );
 };
