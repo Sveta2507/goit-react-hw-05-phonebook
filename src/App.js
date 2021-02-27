@@ -63,7 +63,12 @@ class App extends Component {
           deleteContact={this.deleteContact}
         />
 
-        <CSSTransition in={inProp} timeout={200} classNames="my-node">
+        <CSSTransition
+          in={inProp}
+          timeout={200}
+          classNames="my-node"
+          // unmountOnExit
+        >
           <Notifications name={name} contactAdded={contact} />
         </CSSTransition>
       </>
