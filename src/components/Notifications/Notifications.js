@@ -1,9 +1,20 @@
 import React from "react";
 import classes from "./Notifications.module.css";
 import PropTypes from "prop-types";
+import { CSSTransition } from "react-transition-group";
 
-const Notifications = ({ message }) => {
-  return <p className={classes.notif}>{message}</p>;
+const Notifications = ({ name, isExists }) => {
+  return (
+    <CSSTransition
+      timeout={250}
+      appear={true}
+      in={isExists}
+      classNames={classes}
+      unmountOnExit
+    >
+      <p className={classes.notif}>{name} is already existing</p>;
+    </CSSTransition>
+  );
 };
 
 Notifications.propTypes = {

@@ -3,9 +3,10 @@
 }
 
 .label {
+    font-size: 35px;
     font-weight: bold;
     color: transparent;
 	-webkit-background-clip: text;
 	background-clip: text;
-	background-image: linear-gradient(to right, rgb(251, 255, 9), rgb(6, 81, 255));
+	background-image: linear-gradient(to right, rgb(255, 9, 9), rgb(6, 81, 255));
 }

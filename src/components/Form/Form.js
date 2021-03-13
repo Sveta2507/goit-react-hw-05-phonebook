@@ -1,3 +1,4 @@
+import classes from "./Form.module.css";
 import React, { Component } from "react";
 import { v4 as id } from "uuid";
 
@@ -30,7 +31,7 @@ class Form extends Component {
     return (
       <>
         <form onSubmit={this.handleSubmit}>
-          <label>Name: </label>
+          <label className={classes.label}>Name: </label>
           <input
             type="text"
             required
@@ -38,7 +39,7 @@ class Form extends Component {
             onChange={this.handleChange}
             placeholder="Enter your name please"
           />
-          <label>Number: </label>
+          <label className={classes.label}>Number: </label>
           <input
             type="text"
             required
@@ -46,7 +47,9 @@ class Form extends Component {
             onChange={this.handleChange}
             placeholder="Enter your phone number please"
           />
-          <button type="submit">Add contact</button>
+          <button type="submit" className={classes.button}>
+            Add contact
+          </button>
         </form>
       </>
     );

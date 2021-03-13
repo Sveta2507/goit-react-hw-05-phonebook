@@ -1,10 +1,12 @@
-import styles from "./App.css";
+import "./App.css";
 import React, { Component } from "react";
+import Notifications from "./components/Notifications/Notifications";
+import { Title } from "./components/Title";
 import { Form } from "./components/Form";
 import { ContactList } from "./components/ContactList";
 import { Filter } from "./components/Filter";
 import { CSSTransition } from "react-transition-group";
-import Notifications from "./components/Notifications/Notifications";
+import Logo from "./components/Logo/Logo";
 
 class App extends Component {
   state = {
@@ -16,11 +18,23 @@ class App extends Component {
     ],
     name: "",
     filter: "",
+    isExists: false,
   };
 
   addContact = (obj) => {
+    const x = this.state.contacts.find((elem) => {
+      // return elem.name === obj.name && elem.number === obj.number;
+      return elem.name === obj.name;
+    });
+    if (x) {
+      this.setState({
+        isExists: true,
+      });
+      setTimeout(() => this.setState({ isExists: false }), 2000);
+      return;
+    }
     this.setState((prevState) => {
-      return { contacts: [...prevState.contacts, obj] };
+      return { contacts: [...prevState.contacts, obj], isExists: false };
     });
   };
 
@@ -37,40 +51,37 @@ class App extends Component {
   };
 
   render() {
-    const { contacts, filter, contact, name, inProp } = this.state;
+    const { contacts, filter, contact, name, isExists } = this.state;
     const filteredContacts = contacts.filter((contact) =>
       contact.name.includes(filter)
     );
     return (
       <>
-        <CSSTransition
-          appear={true}
-          classNames={styles}
-          timeout={500}
-          // unmountOnExit
-        >
-          <h1>Phonebook</h1>
-        </CSSTransition>
+        <Logo />
+        <Notifications name={name} isExists={isExists} />
 
+        <Title name="phonebook" />
         <Form addContact={this.addContact} />
         <Filter
           filteredContacts={this.handleFilterChange}
           value={this.state.filter}
           onChange={this.handleFilterChange}
         />
-        <ContactList
-          contacts={filteredContacts}
-          deleteContact={this.deleteContact}
-        />
 
-        <CSSTransition
+        <CSSTransition>
+          <ContactList
+            contacts={filteredContacts}
+            deleteContact={this.deleteContact}
+          />
+        </CSSTransition>
+
+        {/* <CSSTransition
           in={inProp}
           timeout={200}
           classNames="my-node"
           // unmountOnExit
-        >
-          <Notifications name={name} contactAdded={contact} />
-        </CSSTransition>
+        > */}
+        {/* </CSSTransition> */}
       </>
     );
   }

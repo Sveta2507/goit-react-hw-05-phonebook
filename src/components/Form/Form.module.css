@@ -4,13 +4,21 @@
   }
 
   .label {
+    font-size: 35px;
     font-weight: bold;
     color: transparent;
 	-webkit-background-clip: text;
 	background-clip: text;
-	background-image: linear-gradient(to left, rgb(38, 9, 255), rgb(19, 255, 6));
+	background-image: linear-gradient(to left, rgb(255, 9, 9), rgb(6, 68, 255));
   }
 
   .button {
       font-style: oblique;
+      margin: 5px;
+      font-size: 15px;
+    font-weight: bold;
+    color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+	background-image: linear-gradient(to left, rgb(9, 29, 255), rgb(255, 6, 6));
   }
