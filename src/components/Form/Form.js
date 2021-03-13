@@ -1,11 +1,14 @@
 import classes from "./Form.module.css";
 import React, { Component } from "react";
 import { v4 as id } from "uuid";
+import Alert from "../Notifications/Notifications";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 class Form extends Component {
   state = {
     name: "",
     number: "",
+    alert: false,
   };
 
   handleChange = (event) => {
@@ -23,13 +26,24 @@ class Form extends Component {
       number: number,
       name: name,
     };
-    console.log(contact);
     this.props.addContact(contact);
+    this.changeAlert(true);
+  };
+
+  changeAlert = (bool) => {
+    this.setState({ alert: bool });
   };
 
   render() {
     return (
       <>
+        <TransitionGroup className={classes.notif}>
+          {this.state.alert && (
+            <CSSTransition timeout={250} classNames={classes}>
+              <Alert change={this.changeAlert} />
+            </CSSTransition>
+          )}
+        </TransitionGroup>
         <form onSubmit={this.handleSubmit}>
           <label className={classes.label}>Name: </label>
           <input

@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { Component } from "react";
-import Notifications from "./components/Notifications/Notifications";
-import { Title } from "./components/Title";
+// import Notifications from "./components/Notifications/Notifications";
+// import { Title } from "./components/Title";
 import { Form } from "./components/Form";
 import { ContactList } from "./components/ContactList";
 import { Filter } from "./components/Filter";
@@ -58,9 +58,9 @@ class App extends Component {
     return (
       <>
         <Logo />
-        <Notifications name={name} isExists={isExists} />
+        {/* <Notifications name={name} isExists={isExists} /> */}
 
-        <Title name="phonebook" />
+        {/* <Title name="phonebook" /> */}
         <Form addContact={this.addContact} />
         <Filter
           filteredContacts={this.handleFilterChange}

@@ -1,30 +1,21 @@
-.notif {
-  position: absolute;
-  right: 60px;
-  top: 10px;
-  max-width: 270px;
-  background-color: rgb(115, 111, 231);
-  border-radius: 4px;
-  color: rgb(255, 255, 255);
-  font-weight: 700;
-  padding: 7px;
+.enter {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 250ms linear;
 }
 
-.my-node-enter {
-  opacity: 0;
-  transform: translateY(-100%);
-}
-.my-node-enterActive {
+.enterActive{
   opacity: 1;
-  transform: translateY(0);
-  transition: all 500ms linear;
+  transform: translateX(0);
 }
-.my-node-exit {
+
+.exit{
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
-.my-node-exitActive {
+
+.exitActive{
   opacity: 0;
-  transform: translateY(-100%);
-  transition: all 500ms linear;
+  transform: translateX(100%);
+  transition: all 250ms linear;
 }
