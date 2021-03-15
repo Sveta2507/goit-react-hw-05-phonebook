@@ -10,6 +10,7 @@
 	-webkit-background-clip: text;
 	background-clip: text;
 	background-image: linear-gradient(to left, rgb(255, 9, 9), rgb(6, 68, 255));
+  margin-left: 15px
   }
 
   .button {
@@ -21,6 +22,10 @@
 	-webkit-background-clip: text;
 	background-clip: text;
 	background-image: linear-gradient(to left, rgb(9, 29, 255), rgb(255, 6, 6));
+  }
+
+  .button:hover {
+    border-radius: 70%;
   }
 
   .enter {
