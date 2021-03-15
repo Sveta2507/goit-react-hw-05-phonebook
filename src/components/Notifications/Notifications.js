@@ -34,7 +34,7 @@ class Alert extends Component {
     this.props.change(false);
   };
 
-  componentWillMount() {
+  componentDidMount() {
     clearTimeout(id);
   }
 

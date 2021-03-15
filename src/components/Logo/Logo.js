@@ -7,7 +7,7 @@ class Logo extends Component {
     isLoad: false,
   };
 
-  componentWillMount() {
+  componentDidMount() {
     setTimeout(() => {
       this.setState({ isLoad: true });
     }, 150);

@@ -13,3 +13,14 @@
     height: fit-content;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
+
+.button {
+  font-style: oblique;
+  margin: 5px;
+  font-size: 15px;
+font-weight: bold;
+color: transparent;
+-webkit-background-clip: text;
+background-clip: text;
+background-image: linear-gradient(to left, rgb(255, 9, 255), rgb(255, 6, 6));
+  }

@@ -28,6 +28,7 @@ class Form extends Component {
     };
     this.props.addContact(contact);
     this.changeAlert(true);
+    this.setState({ name: "", number: "" });
   };
 
   changeAlert = (bool) => {
@@ -35,6 +36,7 @@ class Form extends Component {
   };
 
   render() {
+    const { name, number } = this.state;
     return (
       <>
         <TransitionGroup className={classes.notif}>
@@ -52,6 +54,7 @@ class Form extends Component {
             name="name"
             onChange={this.handleChange}
             placeholder="Enter your name please"
+            value={name}
           />
           <label className={classes.label}>Number: </label>
           <input
@@ -60,6 +63,7 @@ class Form extends Component {
             name="number"
             onChange={this.handleChange}
             placeholder="Enter your phone number please"
+            value={number}
           />
           <button type="submit" className={classes.button}>
             Add contact

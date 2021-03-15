@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classes from "./ContactListItem.module.css";
 
 const ContactlistItem = ({ id, number, name, deleteContact }) => {
   return (
@@ -7,7 +8,11 @@ const ContactlistItem = ({ id, number, name, deleteContact }) => {
       <li>
         <p>{name}</p>
         <p>{number}</p>
-        <button type="button" onClick={() => deleteContact(id)}>
+        <button
+          className={classes.button}
+          type="button"
+          onClick={() => deleteContact(id)}
+        >
           Delete
         </button>
       </li>

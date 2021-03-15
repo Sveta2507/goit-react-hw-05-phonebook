@@ -53,7 +53,7 @@ class App extends Component {
   render() {
     const { contacts, filter, contact, name, isExists } = this.state;
     const filteredContacts = contacts.filter((contact) =>
-      contact.name.includes(filter)
+      contact.name.toLowerCase().includes(filter.toLowerCase())
     );
     return (
       <>
